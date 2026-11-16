@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikram Rajaram — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF7F0;
+      --grid-line: rgba(24, 38, 28, 0.06);
+      --ink-dark: #15241B;
+      --ink-muted: #3A4A40;
+      --accent-coral: #F2643D;
+      --accent-lime: #B8F252;
+      --accent-blue: #8AB4F8;
+      --accent-yellow: #F9E076;
+      --card-white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--ink-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 6%;
+      border-bottom: 1.5px solid var(--ink-dark);
+      background: rgba(250, 247, 240, 0.94);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--ink-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo span {
+      color: var(--accent-coral);
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-coral);
+    }
+
+    .btn-contact-pill {
+      background: var(--accent-lime);
+      border: 2px solid var(--ink-dark);
+      padding: 7px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 3px 3px 0px var(--ink-dark);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-contact-pill:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px var(--ink-dark);
+      color: var(--ink-dark) !important;
+    }
+
+    /* Hero Section */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      padding: 52px 0 76px;
+      align-items: center;
+    }
+
+    /* First-Principles Thinking Pill */
+    .method-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-white);
+      border: 1.5px solid var(--ink-dark);
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      box-shadow: 3px 3px 0px rgba(21, 36, 27, 0.12);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .method-pill:hover {
+      transform: translateY(-1px);
+    }
+
+    .method-pill .step.active {
+      color: var(--accent-coral);
+      font-weight: 800;
+    }
+
+    .handwritten {
+      font-family: 'Caveat', cursive;
+      font-size: 1.65rem;
+      color: #2A5C3D;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 6vw, 4.8rem);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-name .last-name {
+      display: block;
+      color: var(--accent-coral);
+      font-style: italic;
+    }
+
+    .hero-bio {
+      border-left: 4px solid var(--accent-lime);
+      padding-left: 18px;
+      font-size: 1.08rem;
+      color: var(--ink-muted);
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .hero-tags {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--ink-dark);
+      margin-bottom: 30px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-box {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 13px 26px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 5px 5px 0px var(--accent-coral);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary-box:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px var(--accent-coral);
+    }
+
+    .link-arrow {
+      text-decoration: none;
+      color: var(--ink-dark);
+      font-weight: 700;
+      font-size: 0.93rem;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-arrow:hover {
+      color: var(--accent-coral);
+      border-bottom-color: var(--accent-coral);
+    }
+
+    /* Tilted About Card */
+    .about-card-wrapper {
+      position: relative;
+      padding-top: 12px;
+    }
+
+    .tape {
+      position: absolute;
+      width: 78px;
+      height: 24px;
+      background: rgba(138, 180, 248, 0.78);
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      z-index: 10;
+    }
+
+    .about-card {
+      background: var(--card-white);
+      border: 2px solid var(--ink-dark);
+      padding: 32px 28px;
+      transform: rotate(1.3deg);
+      box-shadow: 8px 8px 0px rgba(21, 36, 27, 0.12);
+    }
+
+    .about-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .fact-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1.5px dashed rgba(21, 36, 27, 0.2);
+      align-items: baseline;
+    }
+
+    .fact-label {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--accent-coral);
+      font-size: 1.05rem;
+    }
+
+    .fact-value {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1.5px solid var(--ink-dark);
+      margin-top: 20px;
+    }
+
+    .mini-stat-box {
+      padding: 14px;
+    }
+
+    .mini-stat-box:first-child {
+      border-right: 1.5px solid var(--ink-dark);
+    }
+
+    .mini-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--accent-coral);
+      line-height: 1.1;
+    }
+
+    .mini-stat-desc {
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .card-footnote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 14px;
+      color: var(--ink-muted);
+    }
+
+    /* Full-width Dark Statement Banner */
+    .statement-banner {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+      padding: 64px 24px;
+      margin: 20px 0 72px;
+    }
+
+    .statement-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.38;
+    }
+
+    .highlight-lime {
+      background: var(--accent-lime);
+      color: var(--ink-dark);
+      padding: 0 8px;
+      display: inline-block;
+    }
+
+    /* Section Headers */
+    .section-block {
+      margin-bottom: 84px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section-num {
+      width: 42px;
+      height: 42px;
+      border: 1.5px solid var(--ink-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 6px;
+      background: var(--card-white);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .section-subtitle {
+      color: var(--ink-muted);
+      font-size: 0.98rem;
+      margin-left: 58px;
+      margin-bottom: 32px;
+      max-width: 640px;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 28px;
+      align-items: start;
+    }
+
+    .index-card {
+      background: var(--card-white);
+      border: 2px solid var(--ink-dark);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 6px 6px 0px rgba(21, 36, 27, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .index-card:nth-child(odd) {
+      transform: rotate(-0.45deg);
+    }
+
+    .index-card:nth-child(even) {
+      transform: rotate(0.55deg);
+    }
+
+    .index-card:hover {
+      transform: translateY(-4px) rotate(0deg);
+      box-shadow: 8px 8px 0px rgba(21, 36, 27, 0.15);
+    }
+
+    .card-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .card-badge-icon {
+      border: 1.5px solid var(--ink-dark);
+      padding: 5px 12px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      box-shadow: 3px 3px 0px var(--ink-dark);
+      background: #fff;
+    }
+
+    .category-tag {
+      background: var(--accent-lime);
+      border: 1.5px solid var(--ink-dark);
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .category-tag.blue {
+      background: var(--accent-blue);
+    }
+
+    .category-tag.yellow {
+      background: var(--accent-yellow);
+    }
+
+    .index-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      line-height: 1.18;
+      margin-bottom: 6px;
+    }
+
+    .card-role {
+      color: #2A5C3D;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .card-desc {
+      color: var(--ink-muted);
+      font-size: 0.93rem;
+      margin-bottom: 18px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .skill-pill {
+      border: 1.5px solid var(--ink-dark);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--bg-cream);
+    }
+
+    .card-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    /* Interactive 10th / 11th / 12th Grade Syllabus Buttons & Drawer */
+    .grade-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+
+    .grade-btn {
+      background: var(--bg-cream);
+      border: 1.5px solid var(--ink-dark);
+      padding: 6px 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 0px var(--ink-dark);
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .grade-btn:hover,
+    .grade-btn.active {
+      background: var(--accent-yellow);
+      transform: translate(-1px, -1px);
+    }
+
+    .chapter-panel {
+      display: none;
+      background: var(--bg-cream);
+      border: 1.5px dashed var(--ink-dark);
+      padding: 14px 16px;
+      margin-top: 10px;
+    }
+
+    .chapter-panel.open {
+      display: block;
+    }
+
+    .chapter-panel-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--accent-coral);
+      margin-bottom: 8px;
+    }
+
+    .chapter-panel-title span {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .chapter-list {
+      padding-left: 18px;
+      font-size: 0.84rem;
+      color: var(--ink-dark);
+      display: grid;
+      gap: 4px;
+    }
+
+    /* Hobbies Grid */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+    }
+
+    .hobby-card {
+      background: var(--card-white);
+      border: 2px solid var(--ink-dark);
+      padding: 22px;
+      text-align: center;
+      box-shadow: 5px 5px 0px rgba(21, 36, 27, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .hobby-card:nth-child(odd) {
+      transform: rotate(-0.8deg);
+    }
+
+    .hobby-card:nth-child(even) {
+      transform: rotate(0.8deg);
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-4px) rotate(0deg);
+    }
+
+    .hobby-icon {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .hobby-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px) scale(0.92);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Footer / Contact */
+    footer {
+      border-top: 2px solid var(--ink-dark);
+      background: var(--card-white);
+      padding: 56px 24px;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-inner h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .email-reveal-box {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-cream);
+      border: 1.5px solid var(--ink-dark);
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .email-reveal-box.show {
+      display: inline-flex;
+    }
+
+    .btn-copy-small {
+      background: var(--accent-lime);
+      border: 1.5px solid var(--ink-dark);
+      padding: 3px 10px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 32px;
+      }
+      .nav-links a:not(.btn-contact-pill) {
+        display: none;
+      }
+      .section-subtitle {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav>
+    <a href="#" class="logo">V.R <span>✦</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#hobbies">Hobbies &amp; Interests</a>
+      <a href="#contact" class="btn-contact-pill">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="container">
+    <section class="hero">
+      <div>
+        <div class="method-pill" onclick="cycleStep()" title="Click to step through my thinking process">
+          <span class="step active" id="step0">01. Deconstruct</span>
+          <span>→</span>
+          <span class="step" id="step1">02. Identify Axioms</span>
+          <span>→</span>
+          <span class="step" id="step2">03. Reconstruct</span>
+        </div>
+
+        <div class="handwritten">Hello, I'm</div>
+        <h1 class="hero-name">
+          Vikram
+          <span class="last-name">Rajaram.</span>
+        </h1>
+        <p class="hero-bio">
+          I am a Secondary student at NIOS and JEE Aspirant passionate about logic, mathematics, and software engineering. I enjoy designing algorithms from first principles and building interactive fullstack and simulation projects.
+        </p>
+        <div class="hero-tags">
+          Fullstack · Python · Data Structures &amp; Algorithms · Mathematics
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary-box">Explore my work</a>
+        </div>
+      </div>
+
+      <!-- Tilted About Card -->
+      <div class="about-card-wrapper">
+        <div class="tape"></div>
+        <div class="about-card">
+          <div class="handwritten">Since I love building systems...</div>
+          <h2>here are a few<br>about me.</h2>
+
+          <div class="fact-row">
+            <div class="fact-label">Schooling</div>
+            <div class="fact-value">NIOS Secondary Student · Allen Online (JEE Aspirant)</div>
+          </div>
+          <div class="fact-row">
+            <div class="fact-label">Engineering Focus</div>
+            <div class="fact-value">First-Principles Logic, DSA &amp; Fullstack Web</div>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat-box">
+              <div class="mini-stat-num">10th–12th</div>
+              <div class="mini-stat-desc">Grade Math (Cuemath)</div>
+            </div>
+            <div class="mini-stat-box">
+              <div class="mini-stat-num">Bengaluru</div>
+              <div class="mini-stat-desc">Karnataka, India</div>
+            </div>
+          </div>
+
+          <div class="card-footnote">And more projects currently in progress.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Dark Statement Banner -->
+  <section class="statement-banner">
+    <div class="statement-inner">
+      I like to understand how systems work from the ground up, from
+      <span class="highlight-lime">designing clean algorithms</span>
+      and mathematical models to building interactive software people can test directly in their browser.
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- 01: Projects Section -->
+    <section id="projects" class="section-block">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div>
+          <div class="handwritten">things I have built</div>
+          <h2 class="section-title">Projects</h2>
+        </div>
+      </div>
+      <p class="section-subtitle">
+        Systems, simulations, and applications built from scratch. Click through to test the live demos or inspect the source code.
+      </p>
+
+      <div class="cards-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- 02: Education & Learning -->
+    <section id="education" class="section-block">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div>
+          <div class="handwritten">academic foundation</div>
+          <h2 class="section-title">Education &amp; Programs</h2>
+        </div>
+      </div>
+      <p class="section-subtitle">
+        Combining flexible schooling with rigorous training in higher-level mathematics and problem solving.
+      </p>
+
+      <div class="cards-grid">
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">NIOS</div>
+              <span class="category-tag">SECONDARY SCHOOL</span>
+            </div>
+            <h3>National Institute of Open Schooling</h3>
+            <div class="card-role">Secondary Student</div>
+            <p class="card-desc">
+              Pursuing Secondary education with the flexibility to dedicate deep focus toward computer science, algorithm design, and independent software projects.
+            </p>
+          </div>
+          <div class="pill-list">
+            <span class="skill-pill">Mathematics</span>
+            <span class="skill-pill">Science</span>
+            <span class="skill-pill">English</span>
+            <span class="skill-pill">Business Studies</span>
+            <span class="skill-pill">Economics</span>
+          </div>
+        </div>
+
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">Cuemath</div>
+              <span class="category-tag blue">ACCELERATED MATH</span>
+            </div>
+            <h3>10th, 11th &amp; 12th Grade Mathematics</h3>
+            <div class="card-role">Cuemath Program</div>
+            <p class="card-desc">
+              Covered 10th, 11th, and 12th grade mathematics curriculum, building a strong analytical foundation in calculus, linear algebra, trigonometry, combinatorics, statistics and probability.
+            </p>
+            <div class="pill-list">
+              <span class="skill-pill">Combinatorics</span>
+              <span class="skill-pill">Trigonometry</span>
+              <span class="skill-pill">Linear Algebra</span>
+              <span class="skill-pill">Calculus</span>
+              <span class="skill-pill">Statistics &amp; Probability</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="grade-tabs">
+              <button type="button" class="grade-btn" onclick="toggleGrade('10', this)">10th Grade</button>
+              <button type="button" class="grade-btn" onclick="toggleGrade('11', this)">11th Grade</button>
+              <button type="button" class="grade-btn" onclick="toggleGrade('12', this)">12th Grade</button>
+            </div>
+
+            <div class="chapter-panel" id="panel-10">
+              <div class="chapter-panel-title"><span>10th</span> Grade Chapters</div>
+              <ul class="chapter-list">
+                <li>Real Numbers</li>
+                <li>Polynomials</li>
+                <li>Pair of Linear Equations in Two Variables</li>
+                <li>Quadratic Equations</li>
+                <li>Arithmetic Progressions</li>
+                <li>Triangles</li>
+                <li>Coordinate Geometry</li>
+                <li>Introduction to Trigonometry</li>
+                <li>Some Applications of Trigonometry</li>
+                <li>Circles</li>
+                <li>Areas Related to Circles</li>
+                <li>Surface Areas and Volumes</li>
+                <li>Statistics</li>
+                <li>Probability</li>
+              </ul>
+            </div>
+
+            <div class="chapter-panel" id="panel-11">
+              <div class="chapter-panel-title"><span>11th</span> Grade Chapters</div>
+              <ul class="chapter-list">
+                <li>Sets</li>
+                <li>Relations and Functions</li>
+                <li>Trigonometric Functions</li>
+                <li>Principle of Mathematical Induction</li>
+                <li>Complex Numbers and Quadratic Equations</li>
+                <li>Linear Inequalities</li>
+                <li>Permutations and Combinations</li>
+                <li>Binomial Theorem</li>
+                <li>Sequences and Series</li>
+                <li>Straight Lines</li>
+                <li>Conic Sections</li>
+                <li>Introduction to 3D Geometry</li>
+                <li>Limits and Derivatives</li>
+                <li>Mathematical Reasoning</li>
+                <li>Statistics</li>
+                <li>Probability</li>
+              </ul>
+            </div>
+
+            <div class="chapter-panel" id="panel-12">
+              <div class="chapter-panel-title"><span>12th</span> Grade Chapters</div>
+              <ul class="chapter-list">
+                <li>Relations and Functions</li>
+                <li>Inverse Trigonometric Functions</li>
+                <li>Exponential and Logarithmic Functions</li>
+                <li>Matrices</li>
+                <li>Determinants</li>
+                <li>Continuity and Differentiability</li>
+                <li>Differentiation</li>
+                <li>Application of Derivatives</li>
+                <li>Integration</li>
+                <li>Definite Integration and Application</li>
+                <li>Differential Equations</li>
+                <li>Vector Algebra</li>
+                <li>3D Geometry</li>
+                <li>Linear Programming</li>
+                <li>Probability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">ALLEN</div>
+              <span class="category-tag">JEE PREP</span>
+            </div>
+            <h3>Allen Online</h3>
+            <div class="card-role">JEE Aspirant</div>
+            <p class="card-desc">
+              Preparing for JEE with structured training in Physics, Chemistry, and Mathematics, sharpening analytical problem-solving speed and quantitative rigor.
+            </p>
+          </div>
+          <div class="pill-list">
+            <span class="skill-pill">JEE Mathematics</span>
+            <span class="skill-pill">Physics</span>
+            <span class="skill-pill">Chemistry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: Skills Section -->
+    <section id="skills" class="section-block">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div>
+          <div class="handwritten">tools &amp; languages</div>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+      </div>
+      <p class="section-subtitle">
+        Core technologies and concepts I use to design and build software.
+      </p>
+
+      <div class="cards-grid">
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">PYTHON</div>
+              <span class="category-tag">PROGRAMMING</span>
+            </div>
+            <h3>Python</h3>
+            <p class="card-desc">
+              Writing clean, modular, object-oriented Python code, desktop GUI applications, and custom simulation engines.
+            </p>
+          </div>
+          <div class="pill-list">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">OOP</span>
+            <span class="skill-pill">Tkinter</span>
+            <span class="skill-pill">Scripting</span>
+          </div>
+        </div>
+
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">DSA</div>
+              <span class="category-tag blue">PROBLEM SOLVING</span>
+            </div>
+            <h3>Data Structures &amp; Algorithms</h3>
+            <p class="card-desc">
+              Designing efficient scheduling logic, state machines, and algorithmic solutions grounded in mathematical reasoning.
+            </p>
+          </div>
+          <div class="pill-list">
+            <span class="skill-pill">Data Structures</span>
+            <span class="skill-pill">Algorithms</span>
+            <span class="skill-pill">State Machines</span>
+            <span class="skill-pill">Logic Design</span>
+          </div>
+        </div>
+
+        <div class="index-card">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">WEB</div>
+              <span class="category-tag">FULLSTACK</span>
+            </div>
+            <h3>Fullstack Development</h3>
+            <p class="card-desc">
+              Building responsive frontends, interactive HTML5 Canvas simulations, and backend web applications deployed on GitHub Pages.
+            </p>
+          </div>
+          <div class="pill-list">
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">CSS3</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Fullstack Web</span>
+            <span class="skill-pill">Git &amp; GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04: Certificates Section -->
+    <section id="certificates" class="section-block">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <div class="handwritten">verified credentials</div>
+          <h2 class="section-title">Certificates</h2>
+        </div>
+      </div>
+      <p class="section-subtitle">
+        Verified courses, programs, and milestones completed along the way.
+      </p>
+
+      <div class="cards-grid" id="certificatesGrid"></div>
+    </section>
+
+    <!-- 05: Hobbies & Interests Section -->
+    <section id="hobbies" class="section-block">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div>
+          <div class="handwritten">off the screen</div>
+          <h2 class="section-title">Hobbies &amp; Interests</h2>
+        </div>
+      </div>
+      <p class="section-subtitle">
+        Things I enjoy outside of coding and mathematics.
+      </p>
+
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <div class="hobby-icon">🏀</div>
+          <div class="hobby-title">Basketball</div>
+        </div>
+
+        <div class="hobby-card">
+          <div class="hobby-icon">🎵</div>
+          <div class="hobby-title">Music</div>
+        </div>
+
+        <div class="hobby-card">
+          <div class="hobby-icon">🪈</div>
+          <div class="hobby-title">Flute</div>
+        </div>
+
+        <div class="hobby-card">
+          <div class="hobby-icon">💪</div>
+          <div class="hobby-title">Pull-ups</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Footer -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <div class="handwritten">want to collaborate or chat?</div>
+        <h3>Get in touch.</h3>
+      </div>
+      <div class="footer-actions">
+        <button type="button" class="btn-primary-box" style="border:none; cursor:pointer; font-family:inherit;" onclick="revealEmail()">Email me</button>
+        <div class="email-reveal-box" id="emailRevealBox">
+          <span>vikram.rakr@gmail.com</span>
+          <button type="button" class="btn-copy-small" id="copyEmailBtn" onclick="copyEmail()">Copy</button>
+        </div>
+        <a href="https://github.com/vikramrakr" target="_blank" rel="noopener noreferrer" class="btn-contact-pill" style="text-decoration:none; color:var(--ink-dark);">GitHub ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. PROJECTS DATA & RENDERER
+    // =========================================================================
+    const PROJECTS = [
+      {
+        badge: "SIMULATION",
+        tag: "PYTHON • TKINTER",
+        tagColor: "lime", // "lime", "blue", or "yellow"
+        title: "Multi Car Elevator System",
+        subtitle: "M×N Control & Dispatch Simulation",
+        description:
+          "An object-oriented M×N elevator control simulation featuring smart multi-car dispatching (on-the-way eligibility, proximity, and workload tie-breaking), dual sorted LOOK queues, door obstruction safety interlocks, and a real-time interactive dashboard.",
+        skills: ["Python", "OOP", "Tkinter", "LOOK Scheduling", "State Machines"],
+        repoUrl: "https://github.com/vikramrakr/Multi-Car-Elevator-System",
+        liveUrl: "https://vikramrakr.github.io/Multi-Car-Elevator-System/"
+      }
+      // Paste your next project right here!
+    ];
+
+    function renderProjects() {
+      const grid = document.getElementById("projectsGrid");
+      if (!grid) return;
+
+      grid.innerHTML = PROJECTS.map(p => `
+        <div class="index-card reveal">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">${p.badge}</div>
+              <span class="category-tag ${p.tagColor || ''}">${p.tag}</span>
+            </div>
+            <h3>${p.title}</h3>
+            <div class="card-role">${p.subtitle}</div>
+            <p class="card-desc">${p.description}</p>
+          </div>
+          <div>
+            <div class="pill-list">
+              ${p.skills.map(s => `<span class="skill-pill">${s}</span>`).join(" ")}
+            </div>
+            <div class="card-links">
+              ${p.repoUrl ? `<a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub ↗</a>` : ""}
+              ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">Live Demo ↗</a>` : ""}
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // =========================================================================
+    // 2. CERTIFICATES DATA & RENDERER
+    // =========================================================================
+    const CERTIFICATES = [
+      {
+        issuer: "UDEMY",
+        tag: "ALGORITHMS",
+        tagColor: "lime",
+        title: "Master the Coding Interview: Data Structures + Algorithms",
+        date: "July 28, 2026 • 20 Hours",
+        description:
+          "Comprehensive training in arrays, hash tables, linked lists, trees, graphs, recursion, sorting, searching, and dynamic programming.",
+        credentialUrl: "https://drive.google.com/file/d/18hQ_LhM66wQ_gQkd0fFElluHKZYBntLW/view?usp=sharing"
+      },
+      {
+        issuer: "UDEMY",
+        tag: "FULLSTACK",
+        tagColor: "blue",
+        title: "The Complete Full-Stack Web Development Bootcamp",
+        date: "Aug. 28, 2025 • 61.5 Hours",
+        description:
+          "End-to-end web development covering HTML5, CSS3, JavaScript, Node.js, Express, REST APIs, SQL/PostgreSQL, and deployment.",
+        credentialUrl: "https://drive.google.com/file/d/1oMScGMZhGePl98c08iUl0E_uCsvAMlPq/view?usp=sharing"
+      },
+      {
+        issuer: "UDEMY",
+        tag: "REACT & NEXT.JS",
+        tagColor: "yellow",
+        title: "The Ultimate React Course 2024: React, Next.js, Redux & More",
+        date: "Oct. 28, 2024 • 84 Hours",
+        description:
+          "Modern React architecture including custom hooks, state management with Redux, Context API, React Router, and Next.js.",
+        credentialUrl: "https://drive.google.com/file/d/1dIEMD_-cDgAjLdL77ezXScS21ZGC6NSS/view?usp=sharing"
+      },
+      {
+        issuer: "UDEMY",
+        tag: "JAVASCRIPT",
+        tagColor: "lime",
+        title: "The Complete JavaScript Course 2023: From Zero to Expert!",
+        date: "Sept. 30, 2023 • 68.5 Hours",
+        description:
+          "Deep dive into modern ES6+ JavaScript, asynchronous programming, promises, OOP, DOM manipulation, and application architecture.",
+        credentialUrl: "https://drive.google.com/file/d/1N39aT6tbnsXdMvcFgKLD-6ecC2JO1hLD/view?usp=sharing"
+      },
+      {
+        issuer: "GOOGLE CLOUD • COURSERA",
+        tag: "GENERATIVE AI",
+        tagColor: "blue",
+        title: "Introduction to Generative AI",
+        date: "June 19, 2023",
+        description:
+          "Foundational concepts of generative AI, large language models, model types, and Google Cloud AI development workflows.",
+        credentialUrl: "https://drive.google.com/file/d/13z7owmAOtzsj_-SqJSvNHFVKkgWIYtiw/view?usp=sharing"
+      }
+    ];
+
+    function renderCertificates() {
+      const grid = document.getElementById("certificatesGrid");
+      if (!grid) return;
+
+      grid.innerHTML = CERTIFICATES.map(c => `
+        <div class="index-card reveal">
+          <div>
+            <div class="card-top-bar">
+              <div class="card-badge-icon">${c.issuer}</div>
+              <span class="category-tag ${c.tagColor || ''}">${c.tag}</span>
+            </div>
+            <h3>${c.title}</h3>
+            <div class="card-role">${c.date}</div>
+            <p class="card-desc">${c.description}</p>
+          </div>
+          ${c.credentialUrl ? `
+            <div class="card-links">
+              <a href="${c.credentialUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">View Certificate ↗</a>
+            </div>
+          ` : ""}
+        </div>
+      `).join("");
+    }
+
+    renderProjects();
+    renderCertificates();
+
+    // =========================================================================
+    // 3. SCROLL REVEAL OBSERVER (ALL SECTIONS)
+    // =========================================================================
+    const revealElements = document.querySelectorAll(
+      '.section-block .section-title, ' +
+      '.section-block .section-subtitle, ' +
+      '.index-card, ' +
+      '.hobby-card'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "-25px 0px -25px 0px"
+    });
+
+    revealElements.forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    // =========================================================================
+    // 4. FORCED SMOOTH NAVBAR SCROLLING
+    // =========================================================================
+    function glideToY(targetY, duration = 600) {
+      const startY = window.scrollY;
+      const diff = targetY - startY;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, startY + diff * ease);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+        const offset = targetId === '#contact' ? 0 : 80;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+
+        glideToY(targetPosition, 600);
+      });
+    });
+
+    // =========================================================================
+    // 5. HERO DECONSTRUCT -> AXIOMS -> RECONSTRUCT PILL
+    // =========================================================================
+    let currentStep = 0;
+    function cycleStep() {
+      const currentEl = document.getElementById(`step${currentStep}`);
+      if (!currentEl) return;
+      currentEl.classList.remove("active");
+      currentStep = (currentStep + 1) % 3;
+      const nextEl = document.getElementById(`step${currentStep}`);
+      if (nextEl) nextEl.classList.add("active");
+    }
+    setInterval(cycleStep, 2200);
+
+    // =========================================================================
+    // 6. CUEMATH 10TH / 11TH / 12TH CHAPTER DRAWER TOGGLE
+    // =========================================================================
+    function toggleGrade(grade, btn) {
+      const targetPanel = document.getElementById(`panel-${grade}`);
+      if (!targetPanel) return;
+
+      const isAlreadyOpen = targetPanel.classList.contains("open");
+
+      document.querySelectorAll(".chapter-panel").forEach(p => p.classList.remove("open"));
+      document.querySelectorAll(".grade-btn").forEach(b => b.classList.remove("active"));
+
+      if (!isAlreadyOpen) {
+        targetPanel.classList.add("open");
+        if (btn) btn.classList.add("active");
+      }
+    }
+
+    // =========================================================================
+    // 7. CONTACT EMAIL REVEAL & AUTO-HIDE
+    // =========================================================================
+    let emailHideTimer;
+
+    function revealEmail() {
+      const box = document.getElementById("emailRevealBox");
+      if (!box) return;
+      box.classList.add("show");
+
+      clearTimeout(emailHideTimer);
+      emailHideTimer = setTimeout(() => {
+        box.classList.remove("show");
+      }, 5000);
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText("vikram.rakr@gmail.com");
+      const btn = document.getElementById("copyEmailBtn");
+      const box = document.getElementById("emailRevealBox");
+      if (btn) btn.textContent = "Copied!";
+
+      clearTimeout(emailHideTimer);
+      setTimeout(() => {
+        if (btn) btn.textContent = "Copy";
+        if (box) box.classList.remove("show");
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
